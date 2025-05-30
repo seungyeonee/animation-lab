@@ -1,5 +1,10 @@
 @forward "./styles/animation.scss";
 
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -15,14 +20,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+li{
+  display: block;
+}
+
 body {
   margin: 0;
   display: flex;
   place-items: center;
   justify-content: center;
-  min-width: 320px;
   width:100%;
   min-height: 100vh;
+  text-align: center;
 }
 
 .wrapper{
@@ -35,7 +44,15 @@ body {
 
 .component-area{
   display: flex;
+  flex-direction: column;
   gap:1.5rem;
+}
+
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 

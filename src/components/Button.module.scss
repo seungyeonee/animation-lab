@@ -1,0 +1,37 @@
+@use '/src/styles/animation.scss';
+
+.btn{
+  position: relative;
+  padding:1rem 1.2rem;
+  background-color: #333;
+  border:1px solid #fff;
+  transition: all .2s linear;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  &.shake{  
+    animation: shake 0.3s linear;
+    animation-iteration-count: 3;
+  }
+  &.touch{
+    overflow: hidden;
+    &::after{
+      content: '';
+      display: inline-flex;
+      position: absolute;
+      left:50%;
+      top:50%;
+      width:100vw;
+      height:100vw;
+      border-radius: 50%;
+      animation: touch 0.9s forwards ease-out;
+    }
+  }
+  &:hover{
+    background-color: #222;
+    border-color: #76b6ff;
+    color:#76b6ff;
+  }
+  &:active{
+    background-color: #111;
+  }
+}
