@@ -1,0 +1,33 @@
+
+@use '/src/styles/animation.scss';
+
+.coin {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation-name: rotateCoin;
+}
+
+.side {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  border-radius: 50%;
+}
+
+.front {
+  background: #FFD700;
+}
+
+.back {
+  background:#C0C0C0;
+  transform: rotateY(180deg);
+}

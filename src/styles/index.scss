@@ -1,4 +1,4 @@
-@forward "./styles/animation.scss";
+@forward "./animation.scss";
 
 *{
   margin:0;
@@ -30,8 +30,10 @@ body {
   place-items: center;
   justify-content: center;
   width:100%;
-  min-height: 100vh;
+  min-height: 100svh;
   text-align: center;
+  padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px)
+    env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 20px);
 }
 
 .wrapper{
@@ -55,6 +57,23 @@ body {
   align-items: center;
 }
 
+[data-animate="fadeIn"]{
+  animation: fadeIn 1.6s forwards ease-in-out;
+}
+
+.sample-box{
+  width:150px;
+  height:150px;
+  border-radius: 10px;
+  background-color: #eee;
+  color:#333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & ~ .sample-box{
+    margin-top:3rem;
+  }
+}
 
 @media (prefers-color-scheme: light) {
   :root {
