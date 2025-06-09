@@ -20,10 +20,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root{
+  width:100%;
+}
+
 li{
   display: block;
 }
 
+html{
+  font-size: 10px;
+}
 body {
   margin: 0;
   display: flex;
@@ -31,6 +38,7 @@ body {
   justify-content: center;
   width:100%;
   min-height: 100svh;
+  font-size: 1.6rem;
   text-align: center;
   padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px)
     env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 20px);
@@ -46,8 +54,16 @@ body {
 
 .component-area{
   display: flex;
-  flex-direction: column;
+  width:100%;
   gap:1.5rem;
+  flex-wrap: wrap;
+  > div{
+    width:calc(100% - 4rem);
+    margin:0 auto;
+    padding:2rem;
+    border-radius: 2rem;
+    background-color: #616161;
+  }
 }
 
 .box{
@@ -55,6 +71,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  &.row{
+    flex-direction: row;
+  }
+  &.gap-1{
+    gap:1rem;
+  }
+  ~ .box{
+    margin-top:3rem;
+  }
 }
 
 [data-animate="fadeIn"]{

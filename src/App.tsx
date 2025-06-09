@@ -9,13 +9,14 @@ import Button from "./components/Button";
 import Stacks from "./components/list/Stacks";
 import Coin from "./components/Coin";
 import ScrollComponent from "./components/ScrollComponent";
+import LoadingGauge from "./components/LoadingGauge";
 
 const App = () => {
   const [type, setType] = useState("css");
   return (
     <div className="wrapper">
       <h1>Animation-lab</h1>
-      <div>
+      <div className="box row">
         <label>
           <input
             type="radio"
@@ -54,29 +55,33 @@ const App = () => {
       <div className="component-area">
         {type === "css" ? (
           <>
-            <div className="box">
-              <h3>Loading</h3>
-              <div className="box">
+            <div>
+              <div className="box gap-1">
+                <h3>LoadingGauge</h3>
+                <LoadingGauge current={50} direction="column" />
+              </div>
+              <div className="box gap-1">
+                <h3>LoadingWave</h3>
                 <LoadingWave />
-                <p>LoadingWave</p>
               </div>
-              <div className="box">
+              <div className="box gap-1">
+                <h3>LoadingCircle</h3>
                 <LoadingCircle />
-                <p>LoadingCircle</p>
               </div>
             </div>
             <div>
-              <h3>DarkMode</h3>
-              <div className="box">
+              <div className="box gap-1">
+                <h3>DarkModeSwitch</h3>
                 <DarkModeSwitch />
-                <p>DarkModeSwitch</p>
               </div>
             </div>
             <div>
-              <h3>Feedback</h3>
-              <div className="box">
+              <div className="box gap-1">
+                <h3>Button feedback="shake"</h3>
                 <Button feedback="shake">shake</Button>
-                <br />
+              </div>
+              <div className="box gap-1">
+                <h3>Button feedback="touch"</h3>
                 <Button feedback="touch">touch</Button>
               </div>
             </div>
@@ -93,14 +98,16 @@ const App = () => {
               />
             </div>
             <div>
-              <h3>Rotate Coin</h3>
-              <Coin
-                animation={{
-                  count: "infinite", // 애니메이션 횟수
-                  duration: 3, // 애니메이션 시간
-                  ease: "ease-in-out", // 애니메이션 easing
-                }}
-              />
+              <div className="box gap-1">
+                <h3>Coin</h3>
+                <Coin
+                  animation={{
+                    count: "infinite", // 애니메이션 횟수
+                    duration: 3, // 애니메이션 시간
+                    ease: "ease-in-out", // 애니메이션 easing
+                  }}
+                />
+              </div>
             </div>
           </>
         ) : type === "lottie" ? (
